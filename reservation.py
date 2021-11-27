@@ -22,7 +22,7 @@ def check_time():
 
         current_time = re.findall('[0-9]+', a)
         # current_time[3] 시, current_time[4] 분, current_time[5] 초
-        if(current_time[3] == '21' and current_time[4] == '57' and current_time[5] == '20'):
+        if(current_time[3] == '10' and current_time[4] == '00' and current_time[5] == '00'):
             msec = re.findall('[0-9]+', b)
 
             if(int(msec[0]) >= 0):
@@ -37,7 +37,7 @@ def check_time():
                 driver.find_element(By.CSS_SELECTOR, '.btn-dark').click()
 
                 # 날짜 지정
-                xpath = "//button[@value='C:2021-12-26']"
+                xpath = "//button[@value='D:2021-12-27']"
                 driver.find_element(By.XPATH, xpath).click()
                 time.sleep(0.1)
 
