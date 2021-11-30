@@ -26,6 +26,7 @@ def check_time():
             msec = re.findall('[0-9]+', b)
 
             if(int(msec[0]) >= 0):
+                print(msec[0])
                 # 드라이버 실행
                 driver = webdriver.Chrome(driver_url)
                 driver.get(url)
@@ -37,12 +38,12 @@ def check_time():
                 driver.find_element(By.CSS_SELECTOR, '.btn-dark').click()
 
                 # 날짜 지정
-                xpath = "//button[@value='D:2021-12-27']"
+                xpath = "//button[@value='D:2021-12-31']"
                 driver.find_element(By.XPATH, xpath).click()
                 time.sleep(0.1)
 
                 # 구역 지정
-                xpath = "//html/body/div[4]/table/tbody/tr/td[3]/div/div/div[4]/div/button[1]" 
+                xpath = "//html/body/div[4]/table/tbody/tr/td[3]/div/div/div[4]/div/button[2]" 
                 driver.find_element(By.XPATH, xpath).click()
 
                 # 인원 지정
@@ -50,7 +51,7 @@ def check_time():
                 driver.find_element(By.XPATH, xpath).click()
 
                 # 예약 기간
-                xpath = "//html/body/div[4]/table/tbody/tr/td[3]/div/div/div[5]/select/option[1]" 
+                xpath = "//html/body/div[4]/table/tbody/tr/td[3]/div/div/div[5]/select/option[2]" 
                 driver.find_element(By.XPATH, xpath).click()
 
                 # 다음 단계
