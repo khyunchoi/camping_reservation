@@ -40,11 +40,14 @@ def check_time():
                 # 날짜 지정
                 xpath = "//button[@value='D:2021-12-31']"
                 driver.find_element(By.XPATH, xpath).click()
-                time.sleep(0.1)
 
                 # 구역 지정
                 xpath = "//html/body/div[4]/table/tbody/tr/td[3]/div/div/div[4]/div/button[2]" 
-                driver.find_element(By.XPATH, xpath).click()
+                while len(driver.driver.find_element(By.XPATH, xpath)) < 1:
+                    driver.refresh()
+                    time.sleep(0.07)
+                else:
+                    driver.find_element(By.XPATH, xpath).click()
 
                 # 인원 지정
                 xpath = "//html/body/div[4]/table/tbody/tr/td[3]/div/div/table[1]/tbody/tr/td[4]/select/option[3]" 
